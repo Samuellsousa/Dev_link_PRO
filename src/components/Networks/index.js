@@ -8,6 +8,7 @@ import { async } from '@firebase/util'
 
 import { db } from '../../services/firebaseConection'
 import { setDoc,doc,getDoc, } from 'firebase/firestore'
+import { toast } from 'react-toastify'
 
 
 
@@ -49,10 +50,12 @@ export default function Networks(){
         linkedin:linkedin
       })
       .then(() => {
-        console.log("Url salva com sucesso !!!")
+        console.log("Url salva com sucesso !")
+        toast.success("Salvo com sucesso!")
       })
       .catch((error) => {
         console.log("ERRO AO SALVAR" + error)
+        toast.error("Erro ao salvar seus links !")
       })
 
     }
