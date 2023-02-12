@@ -21,19 +21,19 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        
         
     - name: Install dependecies
       run: npm install
         
     - name: Build    
-      run: npm run build --if-present
+      run: yarn install build --if-present
     
-    - name: Run tests
-      run: npm run test
+    - name: yarn tests
+      run: yarn test
       
     - name: Lint
       run: npx eslint src/**/*.ts
       
     - name: Run ts-prune  
-      run: npm run find-deadcode
+      run: yarn install find-deadcode
