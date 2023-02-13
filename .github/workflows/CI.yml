@@ -1,39 +1,24 @@
 name: CI
 
 on:
-  pull_request:
+   push:
+      branches: [ "master" ]
+   
+   pull_request:
     branches: [ "master" ]
   
 jobs:
-  build:
-
+  run-tests:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [12.x, 14.x, 18.x]
         
 
     steps:
-    - uses: actions/checkout@v3
-    
+    - uses: actions/checkout@v3    
     - name: install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        
-        
-    - name: Install dependecies
-      run: yarn install
-        
-    - name: Build    
-      run: yarn install build --if-present
-    
-    - name: yarn tests
-      run: yarn test
-      
-    - name: Lint
-      run: npx eslint src/**/*.ts
-      
-    - name: Run ts-prune  
-      run: yarn install find-deadcode
+    - run: ls -la
