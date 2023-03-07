@@ -4,7 +4,7 @@ import './home.css'
 
 import { Social } from '../../components/Social'
 
-import  { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
+import  { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 import {
     getDocs,

@@ -20,7 +20,7 @@ import {
  } from 'firebase/firestore'
 
  import { toast } from 'react-toastify'
-import { async } from '@firebase/util'
+ import { async } from '@firebase/util'
 
 
 export default function Admin(){
