@@ -78,7 +78,7 @@ useEffect(() => {
 
     return(
       <div className="home-container">
-        <h1>Desenvolvedor Web </h1>
+        <h1> DevLinks </h1>
         
         <span>Veja meus links 👇🏻</span>
 
